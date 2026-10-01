@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function Search({ setProducts }) {
 
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('')
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -16,12 +16,12 @@ function Search({ setProducts }) {
       setProducts(res.data.pro);
     } catch (error) {
       console.log(error);
-      setProducts([]);
+      // setProducts([]);
     }
   };
 
   return (
-    <form onSubmit={handleSearch} style={{display: 'flex',justifyContent: 'center',margin: '20px'}}>
+    <form onSubmit={handleSearch} style={{display:'flex',justifyContent:'center',margin:'20px'}}>
     <input type="text" placeholder="Search product..." value={search}
       onChange={(e) => setSearch(e.target.value)}
         style={{ padding: '10px',width: '250px'}}/>
